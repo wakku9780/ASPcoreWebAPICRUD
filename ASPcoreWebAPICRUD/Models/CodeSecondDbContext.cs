@@ -23,6 +23,11 @@ public partial class CodeSecondDbContext : DbContext
 
     public virtual DbSet<UserTbl> UserTbls { get; set; }
 
+    public void Getstudents()
+    {
+        throw new NotImplementedException();
+    }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)

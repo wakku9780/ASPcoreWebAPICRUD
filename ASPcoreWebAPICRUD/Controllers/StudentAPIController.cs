@@ -18,6 +18,7 @@ namespace ASPcoreWebAPICRUD.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Student>>> Getstudents()
         {
+
             var data = await context.Students.ToListAsync();
             return Ok(data);
 
@@ -40,7 +41,8 @@ namespace ASPcoreWebAPICRUD.Controllers
         {
            await context.Students.AddAsync(student);
             await context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetStudentById), new { id = student.Id }, student);
+            //return CreatedAtAction(nameof(GetStudentById), new { id = student.Id }, student);
+            return Ok(student);
         }
 
         [HttpPut("{id}")]
